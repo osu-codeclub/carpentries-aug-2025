@@ -1,0 +1,100 @@
+---
+title: "Install and set up R and RStudio"
+---
+
+------------------------------------------------------------------------
+
+<hr style="height:1pt; visibility:hidden;" />
+
+Before the workshop starts, you'll need to install **R** (the programming language),
+**RStudio** (the editor/IDE we'll use to interact with R),
+and if you can, two **R packages**.
+
+The instructions to do so follow below.
+
+<hr style="height:1pt; visibility:hidden;" />
+
+## Install R and RStudio
+
+_There's a separate tab with instructions for each operating system:_ 
+
+::: {.panel-tabset}
+## Windows
+
+Installation on Windows:
+
+1. **Install R: download and run [this .exe file](https://cran.r-project.org/bin/windows/base/release.htm)**
+   **from [CRAN](https://cran.r-project.org/index.html).**
+
+2. **Install RStudio: Click the download button below "Install RStudio" on**
+   **[this page](https://posit.co/download/rstudio-desktop/#download).**
+
+::: callout-warning
+## Install as administrator if possible
+Note that if you have separate user and admin accounts,
+you should run the installers as administrator
+(right-click on the `.exe` file and select "Run as administrator" instead of double-clicking).
+Otherwise problems may occur later, for example when installing R packages.
+:::
+
+_The video below walks you through this process:_
+
+{{< video https://youtu.be/q0PjTAylwoU >}}
+
+## MacOS
+
+Installation on MacOS:
+
+1. **Install R: download and run [this .pkg file](https://cran.r-project.org/bin/macosx/R-latest.pkg)**
+   **from [CRAN](https://cran.r-project.org/index.html).**
+
+2. **Install RStudio:**
+   **Click the download button below "Install RStudio" on [this page](https://posit.co/download/rstudio-desktop/#download).**
+   
+_The video below walks you through this process:_
+
+{{< video https://youtu.be/5-ly3kyxwEg >}}
+
+## Linux
+
+Installation on Linux:
+
+1. Install R:
+   Instructions for R installation on various Linux platforms
+   (Debian, Fedora, Redhat, and Ubuntu) can be found at <https://cran.r-project.org/bin/linux/>.
+
+2. Install RStudio:
+   Click the download button below "Install RStudio" on [this page](https://posit.co/download/rstudio-desktop/#download).
+
+:::
+
+<hr style="height:1pt; visibility:hidden;" />
+
+## Install two R packages
+
+If you are comfortable doing so, please install two so-called R packages
+(basically, add-ons to the functionality of the language)
+that we will be using during the workshop, which you do as follows:
+
+1.  Open RStudio on your computer
+
+2.  In RStudio, find the R "Console": this is the primary tab in the (bottom) left pane
+
+3.  Type or paste the following commands in the Console,
+    pressing <kbd>Enter</kbd> (<kbd>Return</kbd>) after each:
+
+    -   `install.packages("gapminder")`
+    -   `install.packages("tidyverse")`
+
+4.  You should see lots of text stream by in the Console while the installation is going on.
+    When it's done, test that the packages were successfully installed by running:
+
+    -   `library(gapminder)`
+    -   `library(tidyverse)`
+    
+    The first command should produce no output, but the second should,
+    similar to what's shown in this screenshot:
+    
+![](img/0_setup_library-loading.png){fig-align="center" width="80%"}
+
+<hr style="height:1pt; visibility:hidden;" />
