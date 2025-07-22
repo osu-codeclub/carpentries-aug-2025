@@ -25,6 +25,8 @@ website:
         menu:
         - text: OSU Code Club {{< fa external-link >}}
           href: https://osu-codeclub.github.io
+        - text: Other coding courses {{< fa external-link >}}
+          href: https://osu-codeclub.github.io/pages/other.html          
         - text: Sister workshop on Version Control with Git {{< fa external-link >}}
           href: https://library.osu.edu/events/version-control-with-git-virtual-event-1
         - text: OSU Research Commons {{< fa external-link >}}
