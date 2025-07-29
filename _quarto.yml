@@ -21,8 +21,6 @@ website:
       - text: "4: Data Visualization"
         href: 4_ggplot.qmd
     right:
-      - text: Get help
-        href: help.qmd
       - text: To learn more
         menu:
         - text: OSU Code Club {{< fa external-link >}}

@@ -98,3 +98,26 @@ that we will be using during the workshop, which you do as follows:
 ![](img/0_setup_library-loading.png){fig-align="center" width="80%"}
 
 <hr style="height:1pt; visibility:hidden;" />
+
+## Using Posit Cloud
+
+Having trouble day-of getting R/RStudio to work? You can try using RStudio through [Posit Cloud](https://posit.cloud/).
+
+Click "get started"
+![](img/posit-cloud.png)
+
+<br>
+Select "Learn more" under "Cloud Free"
+![](img/cloud-free.png)
+
+<br>
+[Sign up for Cloud Free](https://login.posit.cloud/register?redirect=https%3A%2F%2Fclient.login.posit.cloud%2Foauth%2Flogin%3Fshow_auth%3D0%26show_login%3D0) by creating an account, or signing in with Google, GitHub, or Clever.
+<br>
+
+Create a New Project > New RStudio Project
+![](img/new-project.png)
+
+<br>
+Use R through RStudio!
+
+![](img/using-rstudio.png)
