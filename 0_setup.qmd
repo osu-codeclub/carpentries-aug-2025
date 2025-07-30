@@ -15,7 +15,7 @@ The instructions to do so follow below.
 ::: {.callout-warning}
 ### Having trouble with the installation?
 Consider using Posit Cloud to run RStudio in your browser,
-as detailed [below](##using-posit-cloud).
+as detailed [at the bottom of this page](##using-posit-cloud).
 :::
 
 <hr style="height:1pt; visibility:hidden;" />
