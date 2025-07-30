@@ -12,9 +12,29 @@ and if you can, two **R packages**.
 
 The instructions to do so follow below.
 
+::: {.callout-warning}
+### Having trouble with the installation?
+Consider using Posit Cloud to run RStudio in your browser,
+as detailed [below](##using-posit-cloud).
+:::
+
 <hr style="height:1pt; visibility:hidden;" />
 
 ## Install R and RStudio
+
+::: {.callout-tip}
+### Using an OSU-managed computer?
+
+If you are using an OSU computer,
+you may not have the "administrative privileges" that are needed to install software
+on your computer the regular way.
+
+However, you should then have an OSU application on your computer that
+allows you to install a selection of approved software,
+and that selection includes R and RStudio.
+On Windows, this app should be called "Software Center",
+and on Mac, "Ohio State Application Self Service".
+:::
 
 _There's a separate tab with instructions for each operating system:_ 
 
@@ -103,21 +123,28 @@ that we will be using during the workshop, which you do as follows:
 
 Having trouble day-of getting R/RStudio to work? You can try using RStudio through [Posit Cloud](https://posit.cloud/).
 
-Click "get started"
+1. Go to https://posit.cloud and click "get started":
+
 ![](img/posit-cloud.png)
 
 <br>
-Select "Learn more" under "Cloud Free"
+
+2. Select "Learn more" under "Cloud Free":
+
 ![](img/cloud-free.png)
 
 <br>
-[Sign up for Cloud Free](https://login.posit.cloud/register?redirect=https%3A%2F%2Fclient.login.posit.cloud%2Foauth%2Flogin%3Fshow_auth%3D0%26show_login%3D0) by creating an account, or signing in with Google, GitHub, or Clever.
+
+3. [Sign up for Cloud Free](https://login.posit.cloud/register?redirect=https%3A%2F%2Fclient.login.posit.cloud%2Foauth%2Flogin%3Fshow_auth%3D0%26show_login%3D0) by creating an account, or signing in with Google, GitHub, or Clever.
+
 <br>
 
-Create a New Project > New RStudio Project
+4. Create a New Project > New RStudio Project:
+
 ![](img/new-project.png)
 
 <br>
-Use R through RStudio!
+
+5. Now you can use R through RStudio on Posit Cloud!
 
 ![](img/using-rstudio.png)
