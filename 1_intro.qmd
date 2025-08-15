@@ -378,7 +378,7 @@ We can figure out where our working directory is by typing the function `getwd()
 getwd()
 ```
 ```r-out
-TBA - ADD YOUR WORKING DIR HORACIO
+TBA - ADD YOUR WORKING DIR HORACIO Lopez-Nicora
 ```
 
 ::: callout-warning
