@@ -30,7 +30,7 @@ figure figcaption {
   color: rgb(141, 141, 143); !important
 }
 
-.bash-in-nocolor {
+.r-in-nocolor {
     background-color: #f0f3f4;
     padding: 5px 5px 5px 10px;
     border-radius: 0px;
@@ -39,7 +39,7 @@ figure figcaption {
     margin: 0px 0px 15px 0px;
 }
 
-.bash-out {
+.r-out {
     background-color: #e4e7ed;
     padding: 5px 5px 0px 10px;
     border-radius: 0px;
@@ -53,7 +53,7 @@ figure figcaption {
     color: rgb(141, 141, 143);
 }
 
-.bash-out-solo {
+.r-out-solo {
     background-color: #e4e7ed;
     padding: 5px 5px 5px 10px;
     border-radius: 0px;

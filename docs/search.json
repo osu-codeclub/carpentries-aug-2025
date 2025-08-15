@@ -175,95 +175,88 @@
     "text": "Footnotes\n\n\n Or Click File =&gt; New file =&gt; R Script.↩︎"
   },
   {
-    "objectID": "1_intro.html",
-    "href": "1_intro.html",
+    "objectID": "1_intro.html#overview",
+    "href": "1_intro.html#overview",
     "title": "Introduction to R and RStudio",
-    "section": "",
-    "text": "In this session, we will learn how to find your way around RStudio, how to interact with R, how to manage your environment, and how to install packages. Our objectives include:\nBy the end of this session, you will be well-equipped with the foundational skills needed to navigate RStudio and effectively interact with R."
+    "section": "1 Overview",
+    "text": "1 Overview\n\n1.1 This session\nIn this session, we will learn how to find your way around RStudio, how to interact with R, how to manage your R environment, and how to install packages. Our objectives include:\n\nDescribing the purpose and use of each pane in RStudio\nLocating buttons and options in RStudio\nDefining a variable/object\nAssigning data to a variable/object\nManaging a workspace in an interactive R session\nUsing mathematical and comparison operators\nCalling functions\nManaging packages\nGetting help in R\n\nBy the end of this session, you will be well-equipped with the foundational skills needed to navigate RStudio and effectively interact with R.\n\n\n1.2 The rest of today\nWe will begin with raw data, perform exploratory analyses, and learn how to plot results graphically. This example starts with a dataset from gapminder.org containing population information for many countries through time. Can you read the data into R? Can you plot the population for Senegal? Can you calculate the average income for countries on the continent of Asia? By the end of these lessons you will be able to do things like plot the populations for all of these countries in under a minute!"
   },
   {
     "objectID": "1_intro.html#why-use-r-and-r-studio",
     "href": "1_intro.html#why-use-r-and-r-studio",
     "title": "Introduction to R and RStudio",
-    "section": "1 Why use R and R studio?",
-    "text": "1 Why use R and R studio?\nScience is a multi-step process: once you’ve designed an experiment and collected data, the real fun begins with analysis! In this lesson, we will teach you some of the fundamentals of the R language and share best practices for organizing code in scientific projects, which will make your life easier.\nThough we could use a spreadsheet in Microsoft Excel or Google Sheets to analyze our data, these tools have limitations in terms of flexibility and accessibility. Moreover, they make it difficult to share the steps involved in exploring and modifying raw data, which is essential for conducting “reproducible” research.\nTherefore, this lesson will guide you on how to start exploring your data using R and RStudio. R is a program available for Windows, Mac, and Linux operating systems, and can be freely downloaded from the link provided above. To run R, all you need is the R program.\nSince R is open source, there are endlessly available free resource to learn how to do practically whatever you want on the internet."
-  },
-  {
-    "objectID": "1_intro.html#overview",
-    "href": "1_intro.html#overview",
-    "title": "Introduction to R and RStudio",
-    "section": "2 Overview",
-    "text": "2 Overview\nWe will begin with raw data, perform exploratory analyses, and learn how to plot results graphically. This example starts with a dataset from gapminder.org containing population information for many countries through time. Can you read the data into R? Can you plot the population for Senegal? Can you calculate the average income for countries on the continent of Asia? By the end of these lessons you will be able to do things like plot the populations for all of these countries in under a minute!"
+    "section": "2 Why use R and R studio?",
+    "text": "2 Why use R and R studio?\nScience is a multi-step process: once you’ve designed an experiment and collected data, the real fun begins with analysis! In this lesson, we will teach you some of the fundamentals of the R language and share best practices for organizing code in scientific projects, which will make your life easier.\nThough we could use a spreadsheet in Microsoft Excel or Google Sheets to analyze our data, these tools have limitations in terms of flexibility and accessibility. Moreover, they make it difficult to share the steps involved in exploring and modifying raw data, which is essential for conducting “reproducible” research.\nTherefore, this lesson will guide you on how to start exploring your data using R. R is a program available for Windows, Mac, and Linux operating systems, and can be freely downloaded from the link provided above. To run R, all you need is the R program.\nHowever, we will be running R inside a fancy editor (or “IDE”, Integrated Development Environment) called RStudio, which makes working with R much more pleasant!\nSince R is open source, there are endlessly available free resource to learn how to do practically whatever you want on the internet."
   },
   {
     "objectID": "1_intro.html#orienting-to-rstudio-basic-layout",
     "href": "1_intro.html#orienting-to-rstudio-basic-layout",
     "title": "Introduction to R and RStudio",
     "section": "3 Orienting to RStudio (basic layout)",
-    "text": "3 Orienting to RStudio (basic layout)\nWhen you first open RStudio, you will be greeted by three panels:\n\nThe interactive R console/Terminal (entire left)\nEnvironment/History/Connections (tabbed in upper right)\nFiles/Plots/Packages/Help/Viewer (tabbed in lower right)\n\nOnce you open files, such as R scripts, an editor panel will also open in the top left. The RStudio integrated development environment (IDE) has four quadrants.\n\nTop left: your source editor. Here you can open, edit, and send code to be executed from files like .R, .Rmd, .qmd or others.\nBottom left: by default this is your console. If you’ve used standalone R, this is the same thing. It is here where your code will be actually executed. You can also type here directly to execute code. There are also two additional tabs, terminal and background jobs which we won’t talk about now.\nTop right: by default this is your environment. It will show you all the objects that are active in your R environment. Here, you can also see history, connections, build a website, use git, or open tutorials but we won’t talk about those now.\nBottom right: by default this shows the files in your working directory (more about that next). There are also additional tabs which show plots, packages, help, viewers, presentations but we won’t talk about those now.\n\nThere is an RStudio cheatsheet for the IDE which is very useful, and you can find it here."
-  },
-  {
-    "objectID": "1_intro.html#r-scripts",
-    "href": "1_intro.html#r-scripts",
-    "title": "Introduction to R and RStudio",
-    "section": "4 R scripts",
-    "text": "4 R scripts\nOne of the panels contains a “Source Editor” pane, as in a Text Editor. Here, we can open and edit all sorts of text files — including R scripts. This quadrant will disappear if you have no files open:\nCreate and open a new R script by clicking File (top menu bar) &gt; New File &gt; R Script.\n\n4.1 Why use a script?\nAn R script is a text file that contains R code.\nIt’s a good idea to write and save most of our code in scripts.\nThis helps us keep track of what we’ve been doing, especially in the longer run, and to re-run our code after modifying input data or one of the lines of code.\n\n\n4.2 Sending code to the console\nWith the cursor on a line of code in the script, press Ctrl + Enter (or, on a Mac: Cmd + Enter)."
-  },
-  {
-    "objectID": "1_intro.html#working-directories",
-    "href": "1_intro.html#working-directories",
-    "title": "Introduction to R and RStudio",
-    "section": "5 Working directories",
-    "text": "5 Working directories\n\n5.1 What is a directory and a working directory?\nUnderstanding directories and your working directory is crucial when coding. A directory can be thought of as a synonym for a folder, with each file contained within a directory. These folders have specific physical locations on your computer, known as paths. Directories are hierarchical and may differ slightly across various operating systems, such as Mac, Windows, and Linux. By using Finder (Mac) or File Explorer (Windows), you can navigate to different locations on your computer.\nYour working directory is exactly what it sounds like—it is the current location or path on your computer where you are actively working. This is important because, by default, your files will be read from, stored in, and saved to this location. Therefore, it is essential to know where your working directory is.\n\n\n5.2 Find your working directory\nWe can figure out where our working directory is by typing the function getwd() into the console. Note: I am using a Mac so you can see my path as forward slashes / while Windows machines will have backslashes \\.\nYou can also use the RStudio GUI to navigate to your working directory by going to the Files quadrant (bottom right), click the gear, and select Go To Working Directory.\n\n\n5.3 Set your working directory\nIf your working directory is not where you want to store your files, you can change it. We can do that using the function setwd().\nsetwd(\"/this/should/be/your/working-directory/path\")\nAlternatively, you can go to Session -&gt; Set Working DIrectory -&gt; Choose Directory…*\n\n\n5.4 Avoid all working directory nonsense with a .RProj"
+    "text": "3 Orienting to RStudio (basic layout)\nWhen you first open RStudio, you will be greeted by three panels:\n\nLeft: the default tab in this panel is your R “Console”, where you can type and execute R code (if you’ve previously used standalone R without RStudio, all that would be shown is this type of console).\nTop right: the default tab in this panel this is your “Environment”, which shows you all the objects that are active in your R environment.\nBottom right: the default tab in this panel is “Files”, showing the files in your working directory (more about that next). There are also additional tabs to e.g. show plots, packages, and help, some of which we’ll see later today.\n\n\n\n\n\n\n\n\n\n\n\n\nClick here for a useful RStudio cheatsheet"
   },
   {
     "objectID": "1_intro.html#r-as-calculator",
     "href": "1_intro.html#r-as-calculator",
     "title": "Introduction to R and RStudio",
-    "section": "6 R as calculator",
-    "text": "6 R as calculator\nWhen using R as a calculator, the order of operations is the same as you would have learned back in school.\nFrom highest to lowest precedence:\n\nParentheses: (, )\nExponents: ^ or **\nMultiply: *\nDivide: /\nAdd: +\nSubtract: -"
+    "section": "4 R as calculator",
+    "text": "4 R as calculator\nTo get used to typing and executing R code, we’ll simply use R as a calculator – type 5 + 5 in the console and press Enter:\n\n5 + 5\n\n[1] 10\n\n\nR will print the result of the calculation, 10. The result is prefaced by [1], which is simply an index/count of outputs, because sometimes R can output hundreds of numbers or other elements.\nTBA - More examples\n\n\n\n\n\n\nOrder of operations\n\n\n\nWhen using R as a calculator, the order of operations is the same as you would have learned back in school. From highest to lowest precedence:\n\nParentheses: (, )\nExponents: ^ or **\nMultiply: *\nDivide: /\nAdd: +\nSubtract: -"
   },
   {
     "objectID": "1_intro.html#the-r-prompt",
     "href": "1_intro.html#the-r-prompt",
     "title": "Introduction to R and RStudio",
-    "section": "7 The R prompt",
-    "text": "7 The R prompt\nThe &gt; sign in your console is the R “prompt”. It indicates that R is ready for you to type something.\nWhen you are not seeing the &gt; prompt, R is either busy (because you asked it to do a longer-running computation) or waiting for you to complete an incomplete command.\nIf you notice that your prompt turned into a +.\nTo get out of this situation, one option is to try and finish the command (in this case, by typing another number) — but here, let’s practice another option: aborting the command by pressing Esc."
+    "section": "5 The R prompt",
+    "text": "5 The R prompt\nThe &gt; sign in your console is the R “prompt”. It indicates that R is ready for you to type something.\nWhen you are not seeing the &gt; prompt, R is either busy (because you asked it to do a longer-running computation) or waiting for you to complete an incomplete command.\nIf you notice that your prompt turned into a +, you typed an incomplete command – for example:\n\n10 /\n\n+\nTo get out of this situation, one option is to try and finish the command (in this case, by typing another number) — but here, let’s practice another option: aborting the command by pressing Esc."
+  },
+  {
+    "objectID": "1_intro.html#r-scripts",
+    "href": "1_intro.html#r-scripts",
+    "title": "Introduction to R and RStudio",
+    "section": "6 R scripts",
+    "text": "6 R scripts\nOnce you open a file, a new RStudio panel will appear in the top-left, where you can view and edit text files, most commonly R scripts (.R). An R script is a text file that contains R code.\nCreate and open a new R script by clicking File (top menu bar) &gt; New File &gt; R Script.\n\nWhy use a script?\nIt’s a good idea to write and save most of our code in scripts, instead of directly in the R console. This helps us keep track of what we’ve been doing, especially in the longer run, and to re-run our code after modifying input data or one of the lines of code.\n\n\nSending code to the console\nTo send code from the editor to the console, where it will be executed by R, press Ctrl + Enter (or, on a Mac: Cmd + Enter) with the cursor anywhere in a line of code in the script.\nPractice that after typing the following command in the script:\n\n5 + 5\n\n[1] 10"
   },
   {
     "objectID": "1_intro.html#adding-comments-to-your-code",
     "href": "1_intro.html#adding-comments-to-your-code",
     "title": "Introduction to R and RStudio",
-    "section": "8 Adding comments to your code",
-    "text": "8 Adding comments to your code\nYou can use # signs to comment your code.\n\nAnything to the right of a # is ignored by R, meaning it won’t be executed.\nYou can use # both at the start of a line (entire line is a comment) or anywhere in a line following code (rest of the line is a comment).\nIn your R script, comments are formatted differently so you can clearly distinguish them from code."
+    "section": "7 Adding comments to your code",
+    "text": "7 Adding comments to your code\nYou can use # signs to comment your code.\n\nAnything to the right of a # is ignored by R, meaning it won’t be executed.\nYou can use # both at the start of a line (entire line is a comment) or anywhere in a line following code (rest of the line is a comment).\nIn your R script, comments are formatted differently so you can clearly distinguish them from code.\n\nSee the example below:\n\n# This line is entirely ignored by R\n10 / 5  # This line contains code but everythig after the '#' is ignored\n\n[1] 2"
   },
   {
-    "objectID": "1_intro.html#functions-in-r",
-    "href": "1_intro.html#functions-in-r",
+    "objectID": "1_intro.html#functions-in-r-and-packages",
+    "href": "1_intro.html#functions-in-r-and-packages",
     "title": "Introduction to R and RStudio",
-    "section": "9 Functions in R",
-    "text": "9 Functions in R\nAlmost everything is a function in R. Important functions that you have already used are install.packages() and library(). Let’s try it with gapminder and tidyverse:\n\ninstall.packages(\"gapminder\")\nlibrary(gapminder)\n\ninstall.packages(\"tidyverse\")\nlibrary(tidyverse)\n\nAnother important function is c(), which stands for combine or concatenate.\nBelow are examples of some other R functions:\n\n\n\n\n\n\n\nFunction\nDescription\n\n\nabs(x)\nabsolute value\n\n\nsqrt(x)\nsquare root\n\n\nceiling(x)\nceiling(3.475) is 4\n\n\nfloor(x)\nfloor(3.475) is 3\n\n\ntrunc(x)\ntrunc(5.99) is 5\n\n\nround(x , digits= n)\nround(3.475, digits=2) is 3.48\n\n\nsignif(x , digits= n)\nsignif(3.475, digits=2) is 3.5\n\n\ncos(x), sin(x), tan(x)\nalso asin(x), acos(x), cosh(x), acosh(x), etc.\n\n\nlog(x)\nnatural logarithm\n\n\nlog10(x)\ncommon logarithm\n\n\nexp(x)\ne^x"
+    "section": "8 Functions in R – and packages",
+    "text": "8 Functions in R – and packages\nTo do almost anything in R, you will use “functions” (these are like commands).\nYou can recognize function calls by the parentheses, like in install.packages(). Inside those parentheses, you can provide arguments to a function.\nFor example, install.packages() is an important function you already used if you followed the setup instructions for this workshop: it will install an R package. R packages are basically add-ons or extensions to the functionality of the R language. Inside the parenthese of install.packages(), you should provide a package name as an argument, like install.packages(\"gapminder\").\nAnother example of an R function is library(), which will access your “library” of installed packages to load a package. Every time you want to use a package in R, you need to load it, just like everytime you want to use MS Word on your computer, you need to open it.\nLet’s see if you have the two packages that we will use today installed:\n\nlibrary(gapminder)\n# (No output is expected if the package can be loaded)\n\n\n# (Output like that shown below is expected if the package can be loaded:)\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.1.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nIf you got an error when trying to load one or both of these packages, you’ll need to install those:\n\n# ONLY run this if you got errors above:\ninstall.packages(\"gapminder\")\ninstall.packages(\"tidyverse\")\n\n\n8.1 Some other R functions\nAnother important function is c(), which stands for combine or concatenate. With c(), you can create vectors that contain multiple elements, like multiple numbers. You’ll learn more about vectors in the next session, but here is a quick example:\n\nc(10, 15)\n\n[1] 10 15\n\n\nBelow are examples of some other R functions:\n\n\n\n\n\n\n\nFunction\nDescription\n\n\n\n\nabs(x)\nabsolute value\n\n\nsqrt(x)\nsquare root\n\n\nround(x , digits= n)\nround(3.475, digits=2) is 3.48\n\n\nlog(x)\nnatural logarithm\n\n\nlog10(x)\ncommon logarithm"
   },
   {
     "objectID": "1_intro.html#comparing-things",
     "href": "1_intro.html#comparing-things",
     "title": "Introduction to R and RStudio",
-    "section": "10 Comparing things",
-    "text": "10 Comparing things\n\n\n\nOperator\nDescription\nExample\n\n\n\n\n&gt;\nGreater than\n5 &gt; 6 returns FALSE\n\n\n&lt;\nLess than\n5 &lt; 6 returns TRUE\n\n\n==\nEquals to\n10 == 10 returns TRUE\n\n\n!=\nNot equal to\n10 != 10 returns FALSE\n\n\n&gt;=\nGreater than or equal to\n5 &gt;= 6 returns FALSE\n\n\n&lt;=\nLess than or equal to\n6 &lt;= 6 returns TRUE"
+    "section": "9 Comparing things",
+    "text": "9 Comparing things\nIn R, you can use comparison operators to compare numbers. For example:\n\n#TBA\n\nHere are the most common comparison operators in R:\n\n\n\nOperator\nDescription\nExample\n\n\n\n\n&gt;\nGreater than\n5 &gt; 6 returns FALSE\n\n\n&lt;\nLess than\n5 &lt; 6 returns TRUE\n\n\n==\nEquals to\n10 == 10 returns TRUE\n\n\n!=\nNot equal to\n10 != 10 returns FALSE\n\n\n&gt;=\nGreater than or equal to\n5 &gt;= 6 returns FALSE\n\n\n&lt;=\nLess than or equal to\n6 &lt;= 6 returns TRUE"
   },
   {
     "objectID": "1_intro.html#r-objects",
     "href": "1_intro.html#r-objects",
     "title": "Introduction to R and RStudio",
-    "section": "11 R objects",
-    "text": "11 R objects\n\n11.1 Assigning stuff to objects\nWe can assign a value to an object with the assignment operator &lt;-. A few examples:\n\nlength_cm &lt;- 250\nconversion &lt;- 2.54\n\nlength_cm / conversion\n\nlength_in &lt;-  length_cm / conversion\n\n\n\n11.2 Object names\nSome pointers on object names:\n\nBecause R is case sensitive, length_inch is different from Length_Inch!\nAn object name cannot contain spaces — so for readability, you should separate words using:\n\nUnderscores: length_inch (this is called “snake case”)\nPeriods: wingspan.inch\nCapitalization: wingspanInch or WingspanInch (“camel case”)\n\nYou will make things easier for yourself by naming objects in a consistent way, for instance by always sticking to your favorite case style like “snake case.”\nObject names can contain but cannot start with a number: x2 is valid but 2x is not.\nMake object names descriptive yet not too long — this is not always easy!"
+    "section": "10 R objects",
+    "text": "10 R objects\n\n10.1 Assigning stuff to objects\nWe can assign one or more values to a so-called “object” with the assignment operator &lt;-. A few examples:\n\n# Assign the value 250 the object 'length_cm'\nlength_cm &lt;- 250\n\n# Assign the value 2.54 to the object 'conversion'\nconversion &lt;- 2.54\n\nTo see the contents of an object, you can simply print its name:\n\nlength_cm\n\n[1] 250\n\n\nImportantly, you can use objects as if you had typed their values directly:\n\nlength_cm / conversion\n\n[1] 98.4252\n\n\n\nlength_in &lt;- length_cm / conversion\nlength_in\n\n[1] 98.4252\n\n\n\n\n10.2 Object names\nSome pointers on object names:\n\nBecause R is case sensitive, length_inch is different from Length_Inch!\nAn object name cannot contain spaces — so for readability, you should separate words using:\n\nUnderscores: length_inch (this is called “snake case”)\nPeriods: wingspan.inch\nCapitalization: wingspanInch or WingspanInch (“camel case”)\n\nYou will make things easier for yourself by naming objects in a consistent way, for instance by always sticking to your favorite case style like “snake case.”\nObject names can contain but cannot start with a number: x2 is valid but 2x is not.\nMake object names descriptive yet not too long — this is not always easy!"
   },
   {
     "objectID": "1_intro.html#r-help-help-and",
     "href": "1_intro.html#r-help-help-and",
     "title": "Introduction to R and RStudio",
-    "section": "12 R Help: help() and ?",
-    "text": "12 R Help: help() and ?\nThe help() function and ? help operator in R offer access to documentation pages for R functions, data sets, and other objects. They provide access to both packages in the standard R distribution and contributed packages."
+    "section": "11 R Help: help() and ?",
+    "text": "11 R Help: help() and ?\nThe help() function and ? help operator in R offer access to documentation pages for R functions, data sets, and other objects. They provide access to both packages in the standard R distribution and contributed packages.\nFor example:\n?install.packages\nThe output should be shown in the Viewer tab of the bottom left RStudio panel, and look something like this:"
+  },
+  {
+    "objectID": "1_intro.html#working-directories",
+    "href": "1_intro.html#working-directories",
+    "title": "Introduction to R and RStudio",
+    "section": "12 Working directories",
+    "text": "12 Working directories\n\n12.1 What is a directory and a working directory?\nUnderstanding directories and your working directory is crucial when coding.\nThe word “directory” is just a synonym for a computer folder. These folders have specific physical locations on your computer, known as paths. Directories are organized hierarchically, and the overall structure of standard directories differs slightly across various operating systems, such as Mac, Windows, and Linux. By using Finder (Mac) or File Explorer (Windows), you can navigate to different locations on your computer, but you can also do so using R code.\nYour working directory is exactly what it sounds like— it is the current location or path on your computer where you are actively working. This is important because, by default, your files will be read from, stored in, and saved to this location. Therefore, it is essential to know where your working directory is.\n\n\n12.2 Find your working directory\nWe can figure out where our working directory is by typing the function getwd() into the console:\ngetwd()\nTBA - ADD YOUR WORKING DIR HORACIO\n\n\n\n\n\n\nDirectories are separated by / on Mac and by \\ on Windows\n\n\n\nBecause I am using a Mac, directories in my path are separated by forward slashes /, while on Windows machines, they are separated by backslashes \\.\nThat said, when you provide a path to R, like we’ll do below with setwd(), you can use forward slashes on all operating systems!\n\n\n\n\n12.3 Set your working directory\nIf your working directory is not where you want to be, you can change it. We can do that using the function setwd():\nsetwd(\"/this/should/be/your/working-directory/path\")\nFor example, I will change mine to:\nsetwd(\"\") # TBA\n\n\n\n\n\n\nRStudio Projects\n\n\n\nIf you change your working dir in the R console, what is shown in the Files tab in the bottom-right does not automatically follow along. In that case, to show the files in your working dir in the Files tab, click the gear icon in that tab, and select Go To Working Directory.\nHowever, there is a better way of dealing with working directories, which is to avoid using setwd() altogether and to use RStudio Projects instead.\nTo learn more about RStudio Projects, see this section in the free book R for Data Science."
   },
   {
     "objectID": "2_data-structures.html#introduction",
