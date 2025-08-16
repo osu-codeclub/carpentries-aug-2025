@@ -249,7 +249,7 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td>12:15 - 1:15 pm</td>
 <td>Jelmer</td>
-<td><strong>3:</strong> <a href="./3_dplyr.html">Data wrangling</a></td>
+<td><strong>3:</strong> <a href="./3_dplyr.html">Data wrangling with <em>dplyr</em></a></td>
 </tr>
 <tr class="even">
 <td>1:15 - 1:30 pm</td>
@@ -363,7 +363,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/osu-codeclub\.github\.io\/carpentries-aug-2025\/");
+      var filterRegex = new RegExp("https:\/\/osu-codeclub\.github\.io\/carpentries-aug-2025");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

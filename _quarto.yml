@@ -4,7 +4,7 @@ project:
 
 website:
   title: "R Workshop"
-  site-url: https://osu-codeclub.github.io/carpentries-aug-2025/
+  site-url: https://osu-codeclub.github.io/carpentries-aug-2025
   repo-url: https://github.com/osu-codeclub/carpentries-aug-2025
   page-navigation: true
   back-to-top-navigation: true
@@ -21,7 +21,7 @@ website:
       - text: "4: Data Visualization"
         href: 4_ggplot.qmd
     right:
-      - text: To learn more
+      - text: "To learn more"
         menu:
         - text: OSU Code Club {{< fa external-link >}}
           href: https://osu-codeclub.github.io
@@ -48,6 +48,7 @@ website:
             url:  https://github.com/osu-codeclub/carpentries-aug-2025
           - text: Report an Issue
             url:  https://github.com/osu-codeclub/carpentries-aug-2025/issues/new?template=Blank+issue
+
 format:
   html:
     theme: yeti
@@ -58,3 +59,10 @@ format:
     number-depth: 3
     grid:
       body-width: 800px
+
+knitr:
+  opts_chunk:
+    class-output: regular-r-output
+    class-message: regular-r-output
+    class-warning: warning-r-output
+    class-error: error-r-output

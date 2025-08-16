@@ -19,7 +19,7 @@ number-sections: false
 | 10:15 - 10:30 am |  | Coffee break {{< fa coffee >}} {{< fa stroopwafel >}} |
 | 10:30 - 11:30 am | Jelmer | **2:** [R's data structures and data types](2_data-structures.qmd) |
 | 11:30 am - 12:15 pm |  | Lunch break {{< fa bread-slice >}} {{< fa pizza-slice >}} |
-| 12:15 - 1:15 pm | Jelmer | **3:** [Data wrangling](3_dplyr.qmd) |
+| 12:15 - 1:15 pm | Jelmer | **3:** [Data wrangling with *dplyr* ](3_dplyr.qmd) |
 | 1:15 - 1:30 pm |  | Coffee break {{< fa coffee >}} {{< fa stroopwafel >}} |
 | 1:30 - 2:50 pm | Jessica | **4:** [Data visualization with *ggplot2*](4_ggplot.qmd) |
 | 2:50 - 3:00 pm |  | Post-workshop survey |
