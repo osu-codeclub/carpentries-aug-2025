@@ -4,6 +4,18 @@ figure figcaption {
 }
 
 /* --------------------------------------------------------------------------/*
+/* Headings 8*/
+h2 {
+  margin-top: 45px;
+}
+h3 {
+  margin-top: 40px;
+}
+h4 {
+  margin-top: 30px;
+}
+
+/* --------------------------------------------------------------------------/*
 /* Callout boxes */
 
 .callout.callout-style-default .callout-body {
@@ -21,7 +33,7 @@ figure figcaption {
     border-left-width: 2px;
     border-left-style: solid;
     border-left-color: #030303;
-    margin: -18px 0px 15px 0px;
+    margin: -18px 0px 25px 0px;
     font-style: italic;
     color: rgb(141, 141, 143); !important
 }
@@ -36,7 +48,7 @@ figure figcaption {
     border-radius: 0px;
     border-style: none;
     border-width: 1px;
-    margin: 0px 0px 15px 0px;
+    margin: 0px 0px 25px 0px;
 }
 
 .r-out {
@@ -48,7 +60,7 @@ figure figcaption {
     border-left-width: 2px;
     border-left-style: solid;
     border-left-color: #030303;
-    margin: -18px 0px 15px 0px;
+    margin: -18px 0px 25px 0px;
     font-style: italic;
     color: rgb(141, 141, 143);
 }
@@ -62,7 +74,7 @@ figure figcaption {
     border-left-width: 2px;
     border-left-style: solid;
     border-left-color: #030303;
-    margin: 0px 0px 15px 0px;
+    margin: 0px 0px 20px 0px;
     font-style: italic;
     color: rgb(90, 90, 92);
 }

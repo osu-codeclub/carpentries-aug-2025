@@ -9,7 +9,6 @@ title: "Install and set up R and RStudio"
 Before the workshop starts, you'll need to install **R** (the programming language),
 **RStudio** (the editor/IDE we'll use to interact with R),
 and if you can, two **R packages**.
-
 The instructions to do so follow below.
 
 ::: {.callout-warning}
@@ -18,36 +17,38 @@ Consider using Posit Cloud to run RStudio in your browser,
 as detailed [at the bottom of this page](##using-posit-cloud).
 :::
 
-<hr style="height:1pt; visibility:hidden;" />
+<br>
 
 ## Install R and RStudio
 
-::: {.callout-tip}
-### Using an OSU-managed computer?
+### Alternative 1: If you have an OSU-managed computer
 
 If you are using an OSU computer,
 you may not have the "administrative privileges" that are needed to install software
 on your computer the regular way.
 
-However, you should then have an OSU application on your computer that
+However, you should in that case have an OSU application on your computer that
 allows you to install a selection of approved software,
-and that selection includes R and RStudio.
+including R and RStudio.
 On Windows, this app should be called "Software Center",
 and on Mac, "Ohio State Application Self Service".
-:::
 
-_There's a separate tab with instructions for each operating system:_ 
+Find that application and inside it, install R and RStudio using this app.
+
+### Alternative 2: If you have a personal computer
+
+_Below, there's a separate tab with installation instructions for each operating system:_ 
 
 ::: {.panel-tabset}
 ## Windows
 
 Installation on Windows:
 
-1. **Install R: download and run [this .exe file](https://cran.r-project.org/bin/windows/base/release.htm)**
-   **from [CRAN](https://cran.r-project.org/index.html).**
+1. Install R: download and run [this .exe file](https://cran.r-project.org/bin/windows/base/release.htm)
+   from [CRAN](https://cran.r-project.org/index.html).
 
-2. **Install RStudio: Click the download button below "Install RStudio" on**
-   **[this page](https://posit.co/download/rstudio-desktop/#download).**
+2. Install RStudio: Click the download button below "Install RStudio" on
+   [this page](https://posit.co/download/rstudio-desktop/#download).
 
 ::: callout-warning
 ## Install as administrator if possible
@@ -65,11 +66,11 @@ _The video below walks you through this process:_
 
 Installation on MacOS:
 
-1. **Install R: download and run [this .pkg file](https://cran.r-project.org/bin/macosx/R-latest.pkg)**
-   **from [CRAN](https://cran.r-project.org/index.html).**
+1. Install R: download and run [this .pkg file](https://cran.r-project.org/bin/macosx/R-latest.pkg)
+   from [CRAN](https://cran.r-project.org/index.html).
 
-2. **Install RStudio:**
-   **Click the download button below "Install RStudio" on [this page](https://posit.co/download/rstudio-desktop/#download).**
+2. Install RStudio:
+   Click the download button below "Install RStudio" on [this page](https://posit.co/download/rstudio-desktop/#download).
    
 _The video below walks you through this process:_
 
@@ -88,63 +89,58 @@ Installation on Linux:
 
 :::
 
-<hr style="height:1pt; visibility:hidden;" />
-
 ## Install two R packages
 
 If you are comfortable doing so, please install two so-called R packages
 (basically, add-ons to the functionality of the language)
 that we will be using during the workshop, which you do as follows:
 
-1.  Open RStudio on your computer
+1. Open RStudio on your computer
 
-2.  In RStudio, find the R "Console": this is the primary tab in the (bottom) left pane
+2. In RStudio, find the R "Console": this is the primary tab in the (bottom) left panel
 
-3.  Type or paste the following commands in the Console,
-    pressing <kbd>Enter</kbd> (<kbd>Return</kbd>) after each:
+3. Type or paste the following commands in the R Console,
+   pressing <kbd>Enter</kbd> (<kbd>Return</kbd>) after each:
 
-    -   `install.packages("gapminder")`
-    -   `install.packages("tidyverse")`
+   - `install.packages("gapminder")`
+   - `install.packages("tidyverse")`
 
-4.  You should see lots of text stream by in the Console while the installation is going on.
-    When it's done, test that the packages were successfully installed by running:
+4. You should see a bunch of text stream by in the Console while these packages
+   are being installed. When it's done,
+   test that the packages were successfully installed by _loading_ them:
 
-    -   `library(gapminder)`
-    -   `library(tidyverse)`
+   - `library(gapminder)`
+   - `library(tidyverse)`
     
-    The first command should produce no output, but the second should,
-    similar to what's shown in this screenshot:
+  The first command should produce no output, but the second should,
+  similar to what's shown in this screenshot:
     
 ![](img/0_setup_library-loading.png){fig-align="center" width="80%"}
 
-<hr style="height:1pt; visibility:hidden;" />
+If you got an error instead when loading one or both packages,
+please [contact one of the instructors](./about.qmd#instructors-and-organizers).
 
 ## Using Posit Cloud
 
-Having trouble day-of getting R/RStudio to work? You can try using RStudio through [Posit Cloud](https://posit.cloud/).
+Having trouble getting R/RStudio to work?
+You can try using RStudio through [Posit Cloud](https://posit.cloud/).
 
-1. Go to https://posit.cloud and click "get started":
+1. **Go to https://posit.cloud and click "get started":**
 
-![](img/posit-cloud.png)
+![](img/posit-cloud.png){fig-align="center" width="90%"}
 
-<br>
+2. **Select "Learn more" under "Cloud Free":**
 
-2. Select "Learn more" under "Cloud Free":
+![](img/cloud-free.png){fig-align="center" width="90%"}
 
-![](img/cloud-free.png)
+3. **[Sign up for Cloud Free](https://login.posit.cloud/register?redirect=https%3A%2F%2Fclient.login.posit.cloud%2Foauth%2Flogin%3Fshow_auth%3D0%26show_login%3D0) by creating an account, or signing in with Google, GitHub, or Clever.**
 
-<br>
+4. **Create a New Project > New RStudio Project:**
 
-3. [Sign up for Cloud Free](https://login.posit.cloud/register?redirect=https%3A%2F%2Fclient.login.posit.cloud%2Foauth%2Flogin%3Fshow_auth%3D0%26show_login%3D0) by creating an account, or signing in with Google, GitHub, or Clever.
-
-<br>
-
-4. Create a New Project > New RStudio Project:
-
-![](img/new-project.png)
+![](img/new-project.png){fig-align="center" width="90%"}
 
 <br>
 
-5. Now you can use R through RStudio on Posit Cloud!
+5. **Now you can use R through RStudio on Posit Cloud!**
 
-![](img/using-rstudio.png)
+![](img/using-rstudio.png){fig-align="center" width="90%"}

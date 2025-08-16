@@ -16,7 +16,7 @@ website:
         href: 1_intro.qmd
       - text: "2: Data Structures"
         href: 2_data-structures.qmd
-      - text: "3: Data Manipulation"
+      - text: "3: Data Wrangling"
         href: 3_dplyr.qmd
       - text: "4: Data Visualization"
         href: 4_ggplot.qmd
@@ -25,14 +25,20 @@ website:
         menu:
         - text: OSU Code Club {{< fa external-link >}}
           href: https://osu-codeclub.github.io
-        - text: Other coding courses {{< fa external-link >}}
-          href: https://osu-codeclub.github.io/pages/other.html          
         - text: Sister workshop on Version Control with Git {{< fa external-link >}}
           href: https://library.osu.edu/events/version-control-with-git-virtual-event-1
+        - text: Other OSU coding activities {{< fa external-link >}}
+          href: https://osu-codeclub.github.io/pages/other.html          
+        - text: "------------------"
         - text: OSU Research Commons {{< fa external-link >}}
           href: https://library.osu.edu/researchcommons
         - text: The Carpentries {{< fa external-link >}}
           href: https://carpentries.org
+        - text: "------------------"
+        - text: The full focal Carpentries lesson {{< fa external-link >}}
+          href: https://swcarpentry.github.io/r-novice-gapminder/
+        - text: R for Data Science ebook {{< fa external-link >}}
+          href: https://r4ds.hadley.nz
       - text: About
         href: about.qmd
     tools:

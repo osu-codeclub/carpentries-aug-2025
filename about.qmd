@@ -3,12 +3,14 @@ title: "About this website"
 number-sections: false
 ---
 
-This is the website for the hands-on "R for Reproducibility" workshop taught at
-Ohio State University on August 18^th^, 2025.
+-----
 
 <hr style="height:1pt; visibility:hidden;" />
 
-### Practical info about the workshop
+*This is the website for the hands-on "R for Reproducibility" workshop taught at*
+*Ohio State University on August 18^th^, 2025.*
+
+### Practical information about the workshop
 
 R is a programming language that is especially powerful for data exploration,
 visualization, and statistical analysis. 
@@ -21,41 +23,42 @@ you can attend this workshop for free by
 
 There are no prerequisites: this workshop is suitable for complete beginners
 in R and in coding in general.
-
-You can attend the workshop either online via Zoom or in-person at co-learning sites
-in Columbus or Wooster (information will be sent after registration).
-
-<hr style="height:1pt; visibility:hidden;" />
+This workshop is taught online via Zoom.
 
 ### Instructors and organizers
 
 This workshop is taught by the organizers of [OSU Code Club](https://osu-codeclub.github.io):
 
-- **Horacio Lopez-Nicora** -- Assistant Professor in the department of [Plant Pathology](https://plantpath.osu.edu)
-- **Jelmer Poelstra** -- Bioinformatics & Microscopy Lead at the CFAES [Molecular and
-  Cellular Imaging Center (MCIC)](https://mcic.osu.edu)
-- **Jessica Cooperstone** -- Associate Professor in the departments of
-  [Horticulture & Crop Science](https://hcs.osu.edu), and [Food Science & Technology](https://fst.osu.edu)
+- **Horacio Lopez-Nicora** [{{< fa envelope >}}](mailto:lopez-nicora.1@osu.edu) --
+  Assistant Professor in the department of [Plant Pathology](https://plantpath.osu.edu)
+
+- **Jelmer Poelstra** [{{< fa envelope >}}](mailto:poelstra.1@osu.edu) --
+  Bioinformatics & Microscopy Lead at the CFAES
+  [Molecular and Cellular Imaging Center (MCIC)](https://mcic.osu.edu)
+
+- **Jessica Cooperstone** [{{< fa envelope >}}](mailto:cooperstone.1@osu.edu) --
+  Associate Professor in the departments of
+  [Horticulture & Crop Science](https://hcs.osu.edu),
+  and [Food Science & Technology](https://fst.osu.edu)
 
 The following **helpers** will be assisisting participants:
 
+- Hannah Toth
 - Menuka Bhandari
-- Fiama Guevara-Guillen
-- Melanie Medina-Lopez
 - Dhanashree
+- Deepa Dhungana
 - Kelsey Badger
 - Matthew Thompson
 - Elizabeth Campolongo
 - Josh Wang
 - Net Zhang
-- Andrey Kopanev
 
 This workshop is organized by **Kelsey Badger** at the
 [OSU Research Commons](https://library.osu.edu/researchcommons), and
 Matthew Thompson and Elizabeth Campolongo at the
 [OSU Imageomics Institute](https://imageomics.osu.edu/).
 
-### Carpentries
+### The Carpentries
 
 **This is a [Carpentries](https://carpentries.org/) workshop.**
 The Carpentries project comprises the Software Carpentry, Data Carpentry,
@@ -67,5 +70,5 @@ The material on this website has been adapted from the
 [R for Reproducible Scientific Analysis](https://swcarpentry.github.io/r-novice-gapminder/)
 Software Carpentry lesson.
 
-[Carpentries website for this workshop and the sister workshop on version control
-on August 15^th^](https://imageomics.github.io/2025-08-15-osu-online/). 
+A [sister workshop](https://imageomics.github.io/2025-08-15-osu-online/)
+is being held on August 15^th^ on version control with Git and GitHub.
