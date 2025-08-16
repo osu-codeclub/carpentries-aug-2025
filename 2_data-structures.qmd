@@ -58,12 +58,14 @@ we'll write our code in a script (and send it to the console from there):
 # 2.3 - Vectorization
 
 # Challenge 1
-# A. Start by making a vector x with the whole numbers 1 through 26.
-#    Then, subtract 0.5 from each element in the vector and save the result in vector y.
-#    Check your results by printing both vectors.
+# - Start by making a vector x with the whole numbers 1 through 26.
+#   Then, subtract 0.5 from each element in the vector and save the result in vector y.
+#   Check your results by printing both vectors.
 
-# B. What do you think will be the result of the following operation?
-#    1:5 * 1:5
+# - What do you think the result of the following operation will be?
+#   1:5 * 1:5
+#   We didn't cover this kind of scenario, but go ahead and test your intuition!
+#   After you've decided on your expectation, run the code and check if you were correct.
 
 # 2.4 - Exploring vectors
 
@@ -108,8 +110,7 @@ vector1 <- 8
 vector2 <- "panda"
 ```
 
-Two things are worth noting about the `"panda"` example,
-which is a so-called **character string** (or _string_ for short):
+In the `"panda"` example, which is a **character string** (_string_ for short):
 
 - `"panda"` constitutes _one element_, not 5 (its number of letters).
 - Unlike when dealing with numbers, we have to _quote the string_.^[
@@ -151,11 +152,11 @@ _now the vector simply printed to the console -- but it is created all the same.
 
 ```{r}
 # First we create a vector:
-vector_to_append <- c("vhagar", "meleys")
+vector_to_append <- c("cardinal", "chickadee")
 vector_to_append
 
 # Then we append another element to it:
-c(vector_to_append, "balerion the dread")
+c(vector_to_append, "bald eagle")
 ```
 
 To create vectors with **series of numbers**, a couple of shortcuts are available.
@@ -186,18 +187,11 @@ We call this behavior "vectorization" and this is a key feature of the R languag
 (Alternatively, you may have expected this code to _repeat_ `myseq` twice,
 but this did not happen!)
 
-::: {.callout-note appearance='minimal'}
-For more about vectorization, see
-[episode 9](https://swcarpentry.github.io/r-novice-gapminder/instructor/09-vectorization.html)
-from the Carpentries lesson that this material is based on.
-:::
-
 <hr style="height:1pt; visibility:hidden;" />
 
 ::: exercise
 #### {{< fa user-edit >}} **Challenge 1** {-}
 
-**A.**
 Start by making a vector `x` with the whole numbers 1 through 26.
 Then, subtract 0.5 from each element in the vector and save the result in vector `y`.
 Check your results by printing both vectors.
@@ -216,10 +210,11 @@ y
 
 <hr style="height:1pt; visibility:hidden;" />
 
-**B.** 
+-----
+
 What do you think the result of the following operation will be?
-Try it out and check if you were correct.
 We didn't cover this kind of scenario, but go ahead and test your intuition!
+After you've decided on your expectation, run the code and check if you were correct.
 
 ```{r, eval=FALSE}
 1:5 * 1:5
@@ -257,11 +252,11 @@ such as:
   # Print the first 6 elements:
   head(myseq)
   
-  # Both head and tail have argument `n` to specify the number of elements:
-  head(myseq, n = 2)
-  
   # Print the last 6 elements:
   tail(myseq)
+  
+  # Both head and tail have argument `n` to specify the number of elements:
+  head(myseq, n = 2)
   ```
 
 - Get **arithmetic summaries** like `sum()` and `mean()` for vectors with numbers:
@@ -319,7 +314,9 @@ cats <- data.frame(
   coat = c("calico", "black", "tabby"),
   weight = c(2.1, 5.0, 3.2)
   )
+```
 
+```{r}
 cats
 ```
 
@@ -402,7 +399,9 @@ can only **be composed of a single data type**.
 
 R will silently pick the "best-fitting" data type when you enter or read data into
 a data frame.
-So let's see what the data types are in our `cats` data frame:
+When we created the `cats` dataframe, this also happened.
+The `str` (structure) function prints some information about objects
+like data frames, and we can use it to see what the data types are in `cats`:
 
 ```{r}
 str(cats)
@@ -431,41 +430,47 @@ typeof(18, 3)
 
 <details><summary>Click for the solutions</summary>
 
-```{r}
-typeof("TRUE")
-```
+1. `"TRUE"` is `character` (and not `logical`) because of the quotes around it:
 
-1. `"TRUE"` is `character` (and not `logical`) because of the quotes around it.
+   ```{r}
+   typeof("TRUE")
+   ```
 
-```{r, error=TRUE}
-typeof(banana)
-```
+-----
 
 2. Recall the earlier example:
    this returns an error because the object `banana` does not exist.
    Any unquoted string (that is not a special keyword like `TRUE` and `FALSE`)
    is interpreted as a reference to an object in R.
    
-```{r}
-typeof(c(2, 6, "3"))
-```
+   ```{r, error=TRUE}
+   typeof(banana)
+   ```
 
-3. We'll talk about why this produces a `character` vector in the next section.
+-----
+
+3. This produces a `character` vector, and we'll talk about why in the next section:
    
-```{r, error=TRUE}
-typeof(18, 3)
-```
+   ```{r}
+   typeof(c(2, 6, "3"))
+   ```
+
+-------
 
 4. This produces an error because the `typeof()` only accepts a single argument,
    which is an R object like a vector.
-   Because we did not wrap `18, 3` within `c()` (i.e. we did not use `c(18, 3)`),
-   we ended up passing **two** arguments to the function, and this resulted in
-   an error.
+   Because we did not wrap use `c()` as in `c(18, 3)`,
+   we ended up passing **two** arguments to the function,
+   which resulted in an error.
    
-   If you guessed that it would have TWICE returned `integer` (or `double`),
-   you were on the right track: you couldn't have known that the function does
-   not accept multiple objects.
+   If you thought it would have TWICE returned `integer` (or `double`),
+   you were on the right track:
+   you couldn't have known the function doesn't accept multiple arguments.
    
+   ```{r, error=TRUE}
+   typeof(18, 3)
+   ```
+
 </details>
 :::
 
@@ -485,8 +490,8 @@ interpret them.
 
 ### Manual Type Conversion
 
-Luckily, you are not simply at the mercy of whatever R decides to do automatically,
-but can convert vectors at will using the `as.` group of functions:
+Luckily, you are not just at the mercy of whatever R decides to do automatically,
+but can convert vectors using the `as.` group of functions:
 
 :::callout-tip
 ### Try to use RStudio's auto-complete functionality here: type "`as.`" and then press the <kbd>Tab</kbd> key.

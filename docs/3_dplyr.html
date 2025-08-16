@@ -339,19 +339,18 @@ Section headers for your script <em>(Click to expand)</em>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co"># 7 - mutate() to modify values in columns and create new columns --------------</span></span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Challenge 2</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># A: Use mutate() to create a new column called gdp_billion that has the absolute</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co">#    GDP (i.e., not relative to population size) and does so in units of billions</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co">#    (i.e., 2.3 would mean 2.3 billion).</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Use mutate() to create a new column called gdp_billion that has the absolute</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co"># GDP (i.e., not relative to population size) and does so in units of billions</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co"># (i.e., 2.3 would mean 2.3 billion).</span></span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co"># B: (Bonus) Use mutate() to create a new column planet that has the value earth</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co">#    in every row. We didn’t cover this kind of scenario but go ahead and test </span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co">#    your intuition!</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="co"># 8 - summarize() to compute group-wise summary stats --------------------------</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Challenge 3</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the average life expectancy per country. Which has the longest average</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="co"># life expectancy and which has the shortest average life expectancy?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co"># (Bonus) Use mutate() to create a new column planet that has the value earth</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co"># in every row.</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co"># 8 - summarize() to compute group-wise summary stats --------------------------</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Challenge 3</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the average life expectancy per country. Which has the longest average</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="co"># life expectancy and which has the shortest average life expectancy?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </details>
 </section>
@@ -585,23 +584,11 @@ Section headers for your script <em>(Click to expand)</em>
 <h2 data-number="5" class="anchored" data-anchor-id="filter-to-pick-rows-observations"><span class="header-section-number">5</span> <code>filter()</code> to pick rows (observations)</h2>
 <section id="introduction-1" class="level3" data-number="5.1">
 <h3 data-number="5.1" class="anchored" data-anchor-id="introduction-1"><span class="header-section-number">5.1</span> Introduction</h3>
-<p>The <code>filter()</code> function outputs only rows that satisfy one or more conditions. It is similar to Filter functionality in spreadsheets — except that those only change what you <em>display</em>, while <code>filter()</code> will <em>remove</em> rows.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Removing data? 😱
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>But if that sounds scary, recall that all <em>dplyr</em> functions take a data frame as the input, and output a <strong><em>new</em></strong>, modified data frame. Therefore, you <em>only</em> modify existing data when assigning the output back to the input object, like in this example with the <code>select()</code> function:</p>
+<p>The <code>filter()</code> function outputs only those rows that satisfy one or more conditions. It is similar to Filter functionality in Excel — except that those only change what you <em>display</em>, while <code>filter()</code> will completely <em>exclude</em> rows.</p>
+<p>But if that sounds scary, recall that <em>dplyr</em> functions always output a <strong><em>new</em></strong> data frame. Therefore, you’ll only modify existing data (e.g., delete rows) when you assign the output back to the input object, like in this example with the <code>select()</code> function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Don't run this - illustrative example only</span></span>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Don't run this - hypothetical example</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>cats <span class="ot">&lt;-</span> cats <span class="sc">|&gt;</span> <span class="fu">select</span>(name, coat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="filter-based-on-one-condition" class="level3" data-number="5.2">
@@ -627,7 +614,15 @@ Removing data? 😱
 # ℹ 11 more rows</code></pre>
 </div>
 </div>
-<p>So, <code>filter()</code> will <strong>include rows that satisfy the condition(s)</strong> you specify. These conditions don’t have to be based on numeric comparisons:</p>
+<details>
+<summary>
+<i class="fa-solid fa-user-edit" aria-label="user-edit"></i> How many rows did we get?
+</summary>
+<p>
+We got 21 rows, as shown in the first line of the output: <code>21 x 6</code> (rows x columns)
+</p>
+</details>
+<p>As we could see above, <code>filter()</code> <strong>outputs rows that satisfy the condition(s)</strong> you specify. These conditions don’t have to be based on numeric comparisons:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Only keep rows where the value in the 'continent' column is 'Europe':</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span></span>
@@ -649,7 +644,7 @@ Removing data? 😱
 # ℹ 350 more rows</code></pre>
 </div>
 </div>
-<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -678,8 +673,8 @@ Remember to use <em>two</em> equals signs <code>==</code> to test for equality!
 3 Japan            Asia       2007    82.6 127467972    31656.</code></pre>
 </div>
 </div>
-<p>By default, multiple conditions are combined in a Boolean <em>AND</em> fashion. In other words, in a given row, <em>each</em> condition needs to be met for that row to be kept. Above, we showed the countries in Asia that had a life expectancy greater than 80 years in 2007.</p>
-<p>If you want to combine conditions in a Boolean <em>OR</em> fashion, where only one of the conditions needs to be met, use a <code>|</code> between them:</p>
+<p>By default, multiple conditions are combined in a Boolean <strong><em>AND</em></strong> fashion. In other words, in a given row, <em>each</em> condition needs to be met for that row to be kept. Above, we showed the countries in Asia that had a life expectancy greater than 80 years in 2007.</p>
+<p>If you want to combine conditions in a Boolean <strong><em>OR</em></strong> fashion, where only one of the conditions needs to be met, use a <code>|</code> between them:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Keep rows with a high life expectancy and/or a high GDP:</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span></span>
@@ -704,7 +699,7 @@ Remember to use <em>two</em> equals signs <code>==</code> to test for equality!
 </section>
 <section id="pipeline-practice" class="level3" data-number="5.4">
 <h3 data-number="5.4" class="anchored" data-anchor-id="pipeline-practice"><span class="header-section-number">5.4</span> Pipeline practice</h3>
-<p>Finally, let’s practice once more with “pipelines” that use multiple <em>dplyr</em> verbs:</p>
+<p>Finally, let’s practice once more with “pipelines” that use multiple <em>dplyr</em> functions: we’ll <code>filter</code> rows, then <code>select</code> columns, and finally <code>rename</code> one of the remaining columns:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(continent <span class="sc">==</span> <span class="st">"Americas"</span>) <span class="sc">|&gt;</span></span>
@@ -729,7 +724,7 @@ Remember to use <em>two</em> equals signs <code>==</code> to test for equality!
 </div>
 <section id="challenge-1" class="level4 unnumbered exercise">
 <h4 class="unnumbered anchored" data-anchor-id="challenge-1"><i class="fa-solid fa-user-edit" aria-label="user-edit"></i> <strong>Challenge 1</strong></h4>
-<p>Use a single command (which can span multiple lines and include pipes) to produce a data frame with columns <code>year</code>, <code>country</code>, and <code>lifeExp</code>, only for countries in Africa. How many rows does your data frame have?</p>
+<p>Use a “pipeline” like above to output a data frame with columns <code>year</code>, <code>country</code>, and <code>lifeExp</code>, only for countries in Africa. How many rows does your output data frame have?</p>
 <details>
 <summary>
 Click for the solution
@@ -763,7 +758,7 @@ It has 624 rows.
 <section id="arrange-to-sort-data-frames" class="level2" data-number="6">
 <h2 data-number="6" class="anchored" data-anchor-id="arrange-to-sort-data-frames"><span class="header-section-number">6</span> <code>arrange()</code> to sort data frames</h2>
 <p>The <code>arrange()</code> function is like sorting functionality in Excel: it changes the order of rows based on the values in one or more columns<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>.</p>
-<p>For example, <code>gapminder</code> is currently first sorted alphabetically by <code>country</code>, and next by <code>year</code>, but we may instead want to sort by population size:</p>
+<p><code>gapminder</code> is currently first sorted alphabetically by <code>country</code>, and next by <code>year</code>. But you may, for example, want to sort by population size instead:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(pop)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -784,7 +779,7 @@ It has 624 rows.
 # ℹ 1,694 more rows</code></pre>
 </div>
 </div>
-<p>Sorting can help you see the observations with the smallest or largest values for a certain column: above, we find that the observation with the smallest population size is <em>Sao Tome and Principe</em> in 1952.</p>
+<p>Sorting can help you find the observations with the smallest or largest values for a certain column: above, we see that the the smallest population size in the dataset is <em>Sao Tome and Principe</em> in 1952.</p>
 <p>Default sorting is from <strong>small to large</strong>. To sort in reverse order, use the <code>desc()</code> (descending, large-to-small) helper function:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span></span>
@@ -831,7 +826,7 @@ It has 624 rows.
 </section>
 <section id="mutate-to-modify-columns-and-create-new-ones" class="level2" data-number="7">
 <h2 data-number="7" class="anchored" data-anchor-id="mutate-to-modify-columns-and-create-new-ones"><span class="header-section-number">7</span> <code>mutate()</code> to modify columns and create new ones</h2>
-<p>So far, we’ve focused on functions that “merely” subset and reorganize data frames. You’ve also seen how you can modify column names. But you haven’t seen how you can <em>change the data</em> or <em>compute derived data</em> in data frames.</p>
+<p>So far, we’ve focused on functions that “merely” subset and reorganize data frames (and you’ve seen how to modify column names). But you haven’t seen how you can <em>change the data</em> or <em>compute derived data</em> in data frames.</p>
 <p>This can be done with the <code>mutate()</code> function. For example, to create a new column that has population sizes in millions rather than in individuals:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new column 'pop_million' by dividing 'pop' by a million:</span></span>
@@ -856,8 +851,9 @@ It has 624 rows.
 </div>
 <p>To <em>modify</em> an existing column rather than adding a new one, simply “assign back to the same name”:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pop =</span> pop <span class="sc">/</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Change the unit of the 'pop' column:</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pop =</span> pop <span class="sc">/</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre class="regular-r-output"><code># A tibble: 1,704 × 6
    country     continent  year lifeExp   pop gdpPercap
@@ -877,7 +873,7 @@ It has 624 rows.
 </div>
 <section id="challenge-2" class="level4 unnumbered exercise">
 <h4 class="unnumbered anchored" data-anchor-id="challenge-2"><i class="fa-solid fa-user-edit" aria-label="user-edit"></i> <strong>Challenge 2</strong></h4>
-<p><strong>A:</strong> Use <code>mutate()</code> to create a new column <code>gdp_billion</code> that has the <strong>absolute</strong> GDP (i.e., not relative to population size) in <strong>units of billions</strong> (i.e., <code>2.3</code> would mean 2.3 billion).</p>
+<p>Use <code>mutate()</code> to create a new column <code>gdp_billion</code> that has the <strong>absolute</strong> GDP (i.e., not relative to population size) in <strong>units of billions</strong> (i.e., <code>2.3</code> would mean 2.3 billion).</p>
 <details>
 <summary>
 Click for the solution
@@ -903,7 +899,7 @@ Click for the solution
 </div>
 </div>
 </details>
-<p><strong>B:</strong> <em>(Bonus)</em> Use <code>mutate()</code> to create a new column <code>planet</code> that has the value <code>earth</code> in every row. We didn’t cover this kind of scenario, but go ahead and test your intuition!</p>
+<p><em>(Bonus)</em> Use <code>mutate()</code> to create a new column <code>planet</code> that has the value <code>earth</code> in every row. We didn’t cover this kind of scenario, but go ahead and test your intuition!</p>
 <details>
 <summary>
 Click for the solution
@@ -1030,7 +1026,7 @@ Click for the solution
 <p>Because we simply provided a file name, the file will have been written in your R working directory<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>.</p>
 <p>If you want to take a look at the file you just created, you can find it in RStudio’s <strong>Files</strong> tab and click on it, which will open it in the editor panel. Of course, you could also find it in your computer’s file browser and open it in different ways.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1039,7 +1035,7 @@ Want to write to a different folder on your computer? <em>(Click to expand)</em>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The <code>file</code> argument to <code>write_tsv()</code> takes a file <em>path</em>, meaning that you can specify any location on your computer for it it in addition to its name.</p>
 <p>For example, if you had a folder called <code>results</code> in your current working directory (directory is just another word for folder), you could put the file in there:</p>

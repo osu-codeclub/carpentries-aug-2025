@@ -75,13 +75,12 @@ Use a new script for this session -- much like in the previous session:
 # 7 - mutate() to modify values in columns and create new columns --------------
 
 # Challenge 2
-# A: Use mutate() to create a new column called gdp_billion that has the absolute
-#    GDP (i.e., not relative to population size) and does so in units of billions
-#    (i.e., 2.3 would mean 2.3 billion).
+# Use mutate() to create a new column called gdp_billion that has the absolute
+# GDP (i.e., not relative to population size) and does so in units of billions
+# (i.e., 2.3 would mean 2.3 billion).
 
-# B: (Bonus) Use mutate() to create a new column planet that has the value earth
-#    in every row. We didn’t cover this kind of scenario but go ahead and test 
-#    your intuition!
+# (Bonus) Use mutate() to create a new column planet that has the value earth
+# in every row.
   
 # 8 - summarize() to compute group-wise summary stats --------------------------
 
@@ -260,24 +259,21 @@ and to _indent_ (by pressing Tab) the subsequent line(s).
 
 ### Introduction
 
-The `filter()` function outputs only rows that satisfy one or more conditions.
-It is similar to Filter functionality in spreadsheets ---
-except that those only change what you _display_, while `filter()` will _remove_ rows.
-
-:::{.callout-warning}
-#### Removing data? 😱
+The `filter()` function outputs only those rows that satisfy one or more conditions.
+It is similar to Filter functionality in Excel ---
+except that those only change what you _display_,
+while `filter()` will completely _exclude_ rows.
 
 But if that sounds scary,
-recall that all _dplyr_ functions take a data frame as the input,
-and output a ***new***, modified data frame.
-Therefore, you _only_ modify existing data when assigning the output
-back to the input object, like in this example with the `select()` function:
+recall that _dplyr_ functions always output a ***new*** data frame.
+Therefore, you'll only modify existing data (e.g., delete rows)
+when you assign the output back to the input object,
+like in this example with the `select()` function:
 
 ```{r, eval=FALSE}
-# Don't run this - illustrative example only
+# Don't run this - hypothetical example
 cats <- cats |> select(name, coat)
 ```
-:::
 
 ### Filter based on one condition
 
@@ -290,8 +286,14 @@ gapminder |>
   filter(lifeExp > 80)
 ```
 
-So, `filter()` will **include rows that satisfy the condition(s)** you specify.
-These conditions don't have to be based on numeric comparisons:
+<details><summary>{{< fa user-edit >}} How many rows did we get?</summary>
+<p>
+We got 21 rows, as shown in the first line of the output: `21 x 6` (rows x columns)
+</p>
+</details>
+
+As we could see above, `filter()` **outputs rows that satisfy the condition(s)**
+you specify. These conditions don't have to be based on numeric comparisons:
 
 ```{r}
 # Only keep rows where the value in the 'continent' column is 'Europe':
@@ -299,7 +301,7 @@ gapminder |>
   filter(continent == "Europe")
 ```
 
-:::callout-important
+:::callout-warning
 ### Remember to use _two_ equals signs `==` to test for equality!
 :::
 
@@ -312,13 +314,13 @@ gapminder |>
   filter(continent == "Asia", year == 2007, lifeExp > 80)
 ```
 
-By default, multiple conditions are combined in a Boolean _AND_ fashion.
+By default, multiple conditions are combined in a Boolean ***AND*** fashion.
 In other words, in a given row,
 _each_ condition needs to be met for that row to be kept.
 Above, we showed the countries in Asia that had a life expectancy greater than 80
 years in 2007.
 
-If you want to combine conditions in a Boolean _OR_ fashion,
+If you want to combine conditions in a Boolean ***OR*** fashion,
 where only one of the conditions needs to be met,
 use a `|` between them:
 
@@ -330,7 +332,9 @@ gapminder |>
 
 ### Pipeline practice
 
-Finally, let's practice once more with "pipelines" that use multiple _dplyr_ verbs:
+Finally, let's practice once more with "pipelines" that use multiple _dplyr_ functions:
+we'll `filter` rows, then `select` columns, and finally `rename` one of the
+remaining columns:
 
 ```{r}
 gapminder |>
@@ -342,10 +346,9 @@ gapminder |>
 :::exercise
 #### {{< fa user-edit >}} **Challenge 1** {-}
 
-Use a single command (which can span multiple lines and include pipes)
-to produce a data frame with columns `year`, `country`, and `lifeExp`, 
-only for countries in Africa.
-How many rows does your data frame have?
+Use a "pipeline" like above to output a data frame with
+columns `year`, `country`, and `lifeExp`, only for countries in Africa.
+How many rows does your output data frame have?
 
 <details><summary>Click for the solution</summary>
 ```{r}
@@ -367,17 +370,18 @@ It will always rearrange the order of rows as a whole,
 never just of individual columns since that would scramble the data.
 ].
 
-For example, `gapminder` is currently first sorted alphabetically by `country`,
-and next by `year`, but we may instead want to sort by population size:
+`gapminder` is currently first sorted alphabetically by `country`,
+and next by `year`.
+But you may, for example, want to sort by population size instead:
 
 ```{r}
 gapminder |>
   arrange(pop)
 ```
 
-Sorting can help you see the observations with the smallest or largest values
-for a certain column: above, we find that the observation with the smallest
-population size is _Sao Tome and Principe_ in 1952.
+Sorting can help you find the observations with the smallest or largest values
+for a certain column: above, we see that the the smallest population size in
+the dataset is _Sao Tome and Principe_ in 1952.
 
 Default sorting is from **small to large**. 
 To sort in reverse order,
@@ -400,8 +404,8 @@ gapminder |>
 
 ## `mutate()` to modify columns and create new ones
 
-So far, we've focused on functions that "merely" subset and reorganize data frames.
-You've also seen how you can modify column names.
+So far, we've focused on functions that "merely" subset and reorganize data frames
+(and you've seen how to modify column names).
 But you haven't seen how you can _change the data_ or _compute derived data_
 in data frames.
 
@@ -419,6 +423,7 @@ To _modify_ an existing column rather than adding a new one,
 simply "assign back to the same name":
 
 ```{r}
+# Change the unit of the 'pop' column:
 gapminder |>
   mutate(pop = pop / 10^6)
 ```
@@ -426,9 +431,9 @@ gapminder |>
 :::exercise
 #### {{< fa user-edit >}} **Challenge 2** {-}
 
-**A:** Use `mutate()` to create a new column `gdp_billion` that has the
-       **absolute** GDP (i.e., not relative to population size)
-       in **units of billions** (i.e., `2.3` would mean 2.3 billion).
+Use `mutate()` to create a new column `gdp_billion` that has the
+**absolute** GDP (i.e., not relative to population size)
+in **units of billions** (i.e., `2.3` would mean 2.3 billion).
 
 <details><summary>Click for the solution</summary>
 
@@ -438,7 +443,7 @@ gapminder |>
 ```
 </details>
 
-**B:** _(Bonus)_ Use `mutate()` to create a new column `planet` that has the value
+_(Bonus)_ Use `mutate()` to create a new column `planet` that has the value
 `earth` in every row.
 We didn't cover this kind of scenario, but go ahead and test your intuition!
 
