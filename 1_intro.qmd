@@ -91,6 +91,7 @@ we'll simply use R as a calculator --
 type `5 + 5` in the console and press <kbd>Enter</kbd>:
 
 ```{r}
+#Addition
 5 + 5
 ```
 
@@ -98,7 +99,52 @@ R will print the result of the calculation, `10`.
 The result is prefaced by `[1]`, which is simply an index/count of outputs,
 because sometimes R can output hundreds of numbers or other elements.
 
-***TBA - More examples***
+***More examples***
+
+```{r}
+# Subtraction
+15 - 4
+```
+
+```{r}
+# Multiplication
+6 * 8
+```
+
+```{r}
+# Division
+40 / 5
+```
+
+```{r}
+# Exponents
+3 ^ 4
+```
+
+```{r}
+# Square root (using exponent 0.5)
+16 ^ 0.5
+```
+
+```{r}
+# Parentheses change order of operations
+(5 + 3) * 2
+```
+
+```{r}
+# Without parentheses, multiplication happens first
+5 + 3 * 2
+```
+
+```{r}
+# Multiple operations in one line
+10 - 2 + 4 * 3
+```
+
+```{r}
+# Using ** as an alternative exponent operator
+2 ** 5
+```
 
 ::: callout-note
 #### Order of operations
@@ -245,7 +291,7 @@ Below are examples of some other R functions:
 |---------------------------------|---------------------------------------|
 | **abs(***x***)** | absolute value |
 | **sqrt(***x***)** | square root |
-| **round(***x* **, digits=** *n***)** | round(3.475, digits=2) is 3.48 |
+| **round(***x***, digits=***n***)** | round(3.475, digits=2) is 3.48 |
 | **log(***x***)** | natural logarithm |
 | **log10(***x***)** | common logarithm |
 
@@ -258,7 +304,33 @@ Below are examples of some other R functions:
 In R, you can use comparison operators to compare numbers. For example:
 
 ```{r}
-#TBA
+# Greater than
+8 > 3
+```
+
+```{r}
+# Less than
+2 < 1
+```
+
+```{r}
+# Equal to
+7 == 7
+```
+
+```{r}
+# Not equal to
+10 != 5
+```
+
+```{r}
+# Greater than or equal to
+6 >= 6
+```
+
+```{r}
+# Comparisons can be combined with arithmetic
+(3 + 4) == 7
 ```
 
 Here are the most common comparison operators in R:
@@ -378,7 +450,7 @@ We can figure out where our working directory is by typing the function `getwd()
 getwd()
 ```
 ```r-out
-TBA - ADD YOUR WORKING DIR HORACIO Lopez-Nicora
+[1] "/Users/lopez-nicora.1"
 ```
 
 ::: callout-warning
@@ -402,7 +474,7 @@ setwd("/this/should/be/your/working-directory/path")
 For example, I will change mine to:
 
 ```r
-setwd("") # TBA
+setwd("~/Library/CloudStorage/OneDrive-TheOhioStateUniversity/Desktop/OSU - Soybean Pathology & Nematology/OSU - SOY PATH AND NEMA/YEAR - SEMESTER/2025/SUMMER 2025/EXTENSION AND OUTREACH/03_carpentries-aug-2025 - AUG_18_2025")
 ```
 
 ::: callout-note
