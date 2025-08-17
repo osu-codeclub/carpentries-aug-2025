@@ -15,8 +15,8 @@ editor_options:
 ### What we'll cover
 
 In this session, you will learn about some of the nuts and bolts of R,
-giving you a solid foundation to start doing more exciting things in the last
-two sessions of the workshop after this: data wrangling and data visualization.
+which will give you a solid foundation to start doing more exciting things in
+the next two sessions of this workshop: data wrangling and data visualization.
 
 Specifically, we will cover R's **data structures** and **data types**.
 
@@ -26,23 +26,24 @@ Specifically, we will cover R's **data structures** and **data types**.
 - **Data types** are how R distinguishes between different kinds of data
   like numbers versus character strings.
   Here, we'll talk about the 4 main data types:
-  `character`, `integer`, `double`, and `logical.`
+  `character`, `integer`, `double`, and `logical`.
 
-An analogy: If we were talking about handling food rather than data,
+An analogy: If this was about food rather than data,
 you can think of different data types as different food items,
-and various data structures as the types of containers that contain them.
+and various data structures as different types of containers to store food in.
 
 ### Setting up
 
 To make it easier to keep track of what we do,
-we'll write our code in a script (and send it to the console from there):
+we'll write our code in a script:
 
-1. _Open a new R script_ (Click the **`+`** symbol in toolbar at the top, then click `R Script`)^[
+1. _Open a new R script_:
+   Click the **`+`** symbol in the top toolbar, then click `R Script`^[
    Or Click `File` => `New file` => `R Script`.].
    
 2. _Save the script_ straight away as `data-structures.R`.
-   You can save it anywhere you like, though it is probably best to save it in a
-   folder specifically for this workshop.
+   You can save it anywhere you like, but ideally in a folder that is specifically
+   for this workshop.
    
 3. If you want section headers as comments in your script,
    like in the script I am showing you in the live session,
@@ -51,28 +52,28 @@ we'll write our code in a script (and send it to the console from there):
 <details><summary>Section headers for your script _(Click to expand)_</summary>
 ```{r}
 # 2 - Vectors ------------------------------------------------------------------
-# 2.1 - Single-element vectors and quoting
+# 2.1 - Single-element vectors (and quoting)
 
 # 2.2 - Multi-element vectors
 
 # 2.3 - Vectorization
 
 # Challenge 1
-# - Start by making a vector x with the whole numbers 1 through 26.
-#   Then, subtract 0.5 from each element in the vector and save the result in vector y.
+# - Make a vector `x` with the whole numbers 1 through 26.
+#   Then, subtract 0.5 from each element in `x` and save the result in vector `y`.
 #   Check your results by printing both vectors.
 
-# - What do you think the result of the following operation will be?
+# - Bonus: What do you think the result of the following operation will be?
 #   1:5 * 1:5
 #   We didn't cover this kind of scenario, but go ahead and test your intuition!
-#   After you've decided on your expectation, run the code and check if you were correct.
+#   After you've decided on your expectation,
+#   run the code and check if you were correct.
 
 # 2.4 - Exploring vectors
 
 # 2.5 - Extracting element from vectors
 
 # 3 - Data frames --------------------------------------------------------------
-# 3.1 - Data frame intro
 
 # 4 - Data types ---------------------------------------------------------------
 # 4.1 - R's main data types
@@ -85,22 +86,19 @@ we'll write our code in a script (and send it to the console from there):
 #   typeof("TRUE")
 #   typeof(banana)
 #   typeof(c(2, 6, "3"))
-# Bonus / trick question:
-#   typeof(18, 3)
 
-# 4.4 - Automatic type coercion
 # 4.5 - Manual type conversion
 
 ```
 </details>
 
-## Data structure 1: Vectors
+## The vector data structure
 
 The first data structure we will explore is the simplest: the vector.
 A vector in R is essentially **a collection of one or more items**.
 Moving forward, we'll call such individual items "elements".
 
-### Single-element vectors and quoting
+### Single-element vectors (and quoting)
 
 Vectors can consist of just a single element,
 so each of the two lines of code below creates a vector:
@@ -170,8 +168,8 @@ Second, you can use a function like `seq()` and its arguments `from` (starting
 value), `to` (end value), and `by` (step size) for fine control over the sequence: 
 
 ```{r}
-myseq <- seq(from = 6, to = 8, by = 0.2)
-myseq
+stepwise_vec <- seq(from = 6, to = 8, by = 0.2)
+stepwise_vec
 ```
 
 ### Vectorization
@@ -179,12 +177,12 @@ myseq
 Consider the output of this command:
 
 ```{r}
-myseq * 2
+stepwise_vec * 2
 ```
 
-Above, **every individual element in `myseq` was multiplied by 2**.
+Above, **every individual element in `stepwise_vec` was multiplied by 2**.
 We call this behavior "vectorization" and this is a key feature of the R language.
-(Alternatively, you may have expected this code to _repeat_ `myseq` twice,
+(Alternatively, you may have expected this code to _repeat_ `stepwise_vec` twice,
 but this did not happen!)
 
 <hr style="height:1pt; visibility:hidden;" />
@@ -192,8 +190,8 @@ but this did not happen!)
 ::: exercise
 #### {{< fa user-edit >}} **Challenge 1** {-}
 
-Start by making a vector `x` with the whole numbers 1 through 26.
-Then, subtract 0.5 from each element in the vector and save the result in vector `y`.
+Make a vector `x` with the whole numbers 1 through 26.
+Then, subtract 0.5 from each element in `x` and save the result in vector `y`.
 Check your results by printing both vectors.
 
 <details><summary>Click for the solution</summary>
@@ -212,7 +210,7 @@ y
 
 -----
 
-What do you think the result of the following operation will be?
+*Bonus:* What do you think the result of the following operation will be?
 We didn't cover this kind of scenario, but go ahead and test your intuition!
 After you've decided on your expectation, run the code and check if you were correct.
 
@@ -237,76 +235,80 @@ in the second vector, and so on.
 
 ### Exploring vectors
 
-R has many functions to get information about vectors and other types of objects,
-such as:
+R has many functions that provide information about vectors and other types of
+objects, such as:
 
 - Get the **number of elements** with `length()`:
 
   ```{r}
-  length(myseq)
+  length(stepwise_vec)
   ```
 
 - See the **first and last few elements**, respectively, with `head()` and `tail()`:
 
   ```{r}
   # Print the first 6 elements:
-  head(myseq)
+  head(stepwise_vec)
   
   # Print the last 6 elements:
-  tail(myseq)
+  tail(stepwise_vec)
   
   # Both head and tail have argument `n` to specify the number of elements:
-  head(myseq, n = 2)
+  tail(stepwise_vec, n = 2)
   ```
 
-- Get **arithmetic summaries** like `sum()` and `mean()` for vectors with numbers:
+- Get **arithmetic summaries** like `mean()` for vectors with numbers:
 
   ```{r}
-  # sum() will sum the values of all elements
-  sum(myseq)
-  
   # mean() will compute the mean (average) across all elements
-  mean(myseq)
+  mean(stepwise_vec)
   ```
 
 ### Extracting elements from vectors
 
-Extracting element from objects like vectors is often referred to as **"indexing"**.
-In R, we can do this using bracket notation -- for example:
+Extracting element from objects like vectors is often called **"indexing"**.
+In R, we can do this using "bracket notation" with square brackets <kbd>[ ]</kbd> 
+-- for example:
 
-- Get the second element:
-
-  ```{r}
-  myseq[2]
-  ```
-
-- Get the second through the fifth elements:
-
-  ```{r}
-  myseq[2:5]
-  ```
-
-- Get the first and eight elements:
+- Get the second element with `[2]`^[
+  R uses 1-based indexing, which means it starts counting at 1 like humans do.
+  Index 2 therefore simply corresponds to the second element. <br><br>
+  Python and several other languages use 0-based indexing,
+  which starts counting at 0 such that the second element corresponds to index 1.
+  ]:
 
   ```{r}
-  myseq[c(1, 8)]
+  stepwise_vec[2]
   ```
 
-To put this in a general way:
+- Get the second through the fifth elements with `[2:5]`:
+
+  ```{r}
+  stepwise_vec[2:5]
+  ```
+
+- Get the first and eight elements with `[c(1, 8)]`:
+
+  ```{r}
+  stepwise_vec[c(1, 8)]
+  ```
+
+::: {.callout-tip appearance="minimal"}
+To put this in a generalized way:
 we can extract elements from a vector by using another vector,
 whose values are the positional indices of the elements in the original vector.
+:::
 
-## Data structure 2: Data frames
+## The data frame data structure
 
-### R stores tabular data in "data frames"
+One of R's most powerful features is its
+**built-in ability to deal with tabular data** --
+i.e., data with rows and columns like you are familiar with from Excel
+spreadsheets and so on.
+In R, tabular data is stored in a data structure called "**data frame**".
 
-One of R's most powerful features is its **built-in ability to deal with tabular data** --
-i.e., data with rows and columns like you are familiar with from spreadsheets
-like those you create with Excel.
-
-In R, tabular data is stored in objects that are called "**data frames**",
-the second R data structure we'll cover in some depth.
-Let's start by making a toy data frame with information about 3 cats:
+Let's start by using the `data.frame()` function to make a data frame with
+information about 3 cats:
 
 ```{r}
 cats <- data.frame(
@@ -340,11 +342,12 @@ but in today's remaining sessions we will explore this key R data structure more
 
 ## Data types
 
-### R's main Data Types
+### R's main data types
 
-R distinguishes between different kinds of data, such as character strings and numbers,
-in a formal way, using several pre-defined "data types".
-The behavior of R in various operations will depend heavily on the data type --
+R distinguishes between different kinds of data,
+such as character strings and numbers,
+using several pre-defined "data types".
+R's behavior in various operations depends heavily on the data type --
 for example, the below fails:
 
 ```{r, error=TRUE}
@@ -357,10 +360,9 @@ We can ask what type of data something is in R using the `typeof()` function:
 typeof("valerion")
 ```
 
-R sets the data type of `"valerion"` to `character`,
-which we commonly refer to as character strings or strings.
-In formal terms, the earlier failed command did not work because R does not allow
-us to perform mathematical functions on vectors of type `character`.
+R set the data type of `"valerion"` to `character`, i.e. a (character) string.
+The earlier command failed because R can't perform mathematical functions 
+("_binary operator_") on vectors of type `character` ("_non-numeric argument_").
 
 The `character` data type most commonly contains letters,
 but anything that is placed between quotes (`"..."`) will be interpreted as this
@@ -370,9 +372,7 @@ data type -- even plain numbers:
 typeof("5")
 ```
 
-<hr style="height:1pt; visibility:hidden;" />
-
-Besides `character`, the other 3 **common data types** are:
+Besides `character`, three other **common data types** are:
 
 - `double` / `numeric` -- numbers that can have decimal points:
 
@@ -394,26 +394,28 @@ Besides `character`, the other 3 **common data types** are:
 
 ### A vector can only contain one data type 
 
-Individual vectors, and therefore also individual columns in data frames,
-can only **be composed of a single data type**.
+A vector can only **be composed of a single data type**.
+As we saw above,
+R silently picks the "best-fitting" data type when you create a vector.
 
-R will silently pick the "best-fitting" data type when you enter or read data into
-a data frame.
-When we created the `cats` dataframe, this also happened.
-The `str` (structure) function prints some information about objects
-like data frames, and we can use it to see what the data types are in `cats`:
+The same is true when you enter or read data into a data frame,
+_where each column is a vector and can therefore only contain one data type_.
+
+Let's go back to our `cats` dataframe to find out what data types R assigned. 
+We can quickly see each column's data type and other information using the
+`str()` (structure) function:
 
 ```{r}
 str(cats)
 ```
 
-- The `name` and `coat` columns are `character`, abbreviated `chr`.
+- The `name` and `coat` columns are `cxharacter`, abbreviated `chr`.
 - The `weight` column is `double`/`numeric`, abbreviated `num`.
 
 ::: exercise
 #### {{< fa user-edit >}} **Challenge 2** {-}
 
-What type of vector (if any) do you think each of the following will produce?
+In each line below, what do you think the data type (if any) will be?
 Try it out and see if you were right.
 
 ```{r, eval=FALSE}
@@ -422,13 +424,8 @@ typeof(banana)
 typeof(c(2, 6, "3"))
 ```
 
-Bonus / trick question:
-
-```{r, eval=FALSE}
-typeof(18, 3)
-```
-
 <details><summary>Click for the solutions</summary>
+<hr style="height:1pt; visibility:hidden;" />
 
 1. `"TRUE"` is `character` (and not `logical`) because of the quotes around it:
 
@@ -455,22 +452,6 @@ typeof(18, 3)
    typeof(c(2, 6, "3"))
    ```
 
--------
-
-4. This produces an error because the `typeof()` only accepts a single argument,
-   which is an R object like a vector.
-   Because we did not wrap use `c()` as in `c(18, 3)`,
-   we ended up passing **two** arguments to the function,
-   which resulted in an error.
-   
-   If you thought it would have TWICE returned `integer` (or `double`),
-   you were on the right track:
-   you couldn't have known the function doesn't accept multiple arguments.
-   
-   ```{r, error=TRUE}
-   typeof(18, 3)
-   ```
-
 </details>
 :::
 
@@ -479,14 +460,13 @@ typeof(18, 3)
 R's behavior of returning a character vector for `c(2, 6, "3")` in the challenge
 above is called **type coercion**.
 
-When R encounters a _mix of types_ (here, numbers and characters)
-to be combined into a single vector, it will force all of them to be the same type.
-It "must" do this because, as pointed out above,
-a vector can consist of only a single data type.
+When R encounters a _mix of data types_ (here, numbers and characters)
+to be combined into a single vector, it forces them all to be the same type.
+It "must" do this because a vector can consist of only a single data type.
 
 Type coercion can be the source of many surprises,
-and is one reason you need to be aware of the basic R data types and how R will
-interpret them.
+and is one reason you need to be aware of the basic R data types and how R's
+behaviour around them.
 
 ### Manual Type Conversion
 
@@ -532,22 +512,22 @@ simply use the bracket on the other side of the arrow -- for example:
 - Change the first element to `30`:
 
   ```{r}
-  myseq[1] <- 30
-  myseq
+  stepwise_vec[1] <- 30
+  stepwise_vec
   ```
 
 - Change the last element to `0`:
 
   ```{r}
-  myseq[length(myseq)] <- 0
-  myseq
+  stepwise_vec[length(stepwise_vec)] <- 0
+  stepwise_vec
   ```
   
 - Change the second element to the mean value of the vector:
 
   ```{r}
-  myseq[2] <- mean(myseq)
-  myseq
+  stepwise_vec[2] <- mean(stepwise_vec)
+  stepwise_vec
   ```
   
 ### Extracting columns from a data frame
@@ -564,41 +544,6 @@ This kind of operation will return a vector -- and can be indexed as well:
 ```{r}
 cats$weight[2]
 ```
-
-### Factors
-
-**Categorical** data, like treatments in an experiment,
-can be stored as "factors" in R.
-Factors are useful for statistical analyses and for plotting,
-e.g. because they allow you to specify a custom order.
-
-```{r}
-diet_vec <- c("high", "medium", "low", "low", "medium")
-diet_vec
-factor(diet_vec)
-```
-
-In the example above, we turned a character vector into a factor.
-Its "levels" (low, medium, high) are sorted alphabetically by default,
-but we can manually specify an order that makes more sense:
-
-```{r}
-diet_fct <- factor(diet_vec, levels = c("low", "medium", "high"))
-diet_fct
-```
-
-This ordering would be automatically respected in plots and statistical analyses.
-
-::: {.callout-warning collapse='true'}
-### Oddly, factors are technically not a data type _(Click to expand)_
-For most intents and purposes,
-it makes sense to think of factors as another data type, even though technically,
-they are a kind of data structure build on the `integer` data type:
-
-```{r}
-typeof(diet_fct)
-```
-:::
 
 ### More on the `logical` data type
 
@@ -666,6 +611,41 @@ for example:
 ```{r}
 sum(vector_NA, na.rm = TRUE)
 ```
+
+### Factors
+
+**Categorical** data, like treatments in an experiment,
+can be stored as "factors" in R.
+Factors are useful for statistical analyses and for plotting,
+e.g. because they allow you to specify a custom order.
+
+```{r}
+diet_vec <- c("high", "medium", "low", "low", "medium")
+diet_vec
+factor(diet_vec)
+```
+
+In the example above, we turned a character vector into a factor.
+Its "levels" (low, medium, high) are sorted alphabetically by default,
+but we can manually specify an order that makes more sense:
+
+```{r}
+diet_fct <- factor(diet_vec, levels = c("low", "medium", "high"))
+diet_fct
+```
+
+This ordering would be automatically respected in plots and statistical analyses.
+
+::: {.callout-warning collapse='true'}
+### Oddly, factors are technically not a data type _(Click to expand)_
+For most intents and purposes,
+it makes sense to think of factors as another data type, even though technically,
+they are a kind of data structure build on the `integer` data type:
+
+```{r}
+typeof(diet_fct)
+```
+:::
 
 ### Learn more
 
